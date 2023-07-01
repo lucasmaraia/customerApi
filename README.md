@@ -1,15 +1,67 @@
 # Custumer Service
 
-### Requisitos
+### EndPoints:
 
-1. JDK 8
-1. Maven 3
+Consulta de customer
+#Get http://localhost:8080/customers
 
-### Rodando
+response: 
+```json
+[
+    {
+        "id": 1,
+        "name": "Mariazinha",
+        "email": "mariazinha@email.com",
+        "addresses": []
+    },
+    {
+        "id": 2,
+        "name": "Joãozinho",
+        "email": "joaozinho@email.com",
+        "addresses": []
+    }
+]
+```
+cadastro de customer
+@Post http://localhost:8080/customers
+body:
+```json
+{
+    "name": "Lucas Maraia",
+    "email": "l.cliniomaraia@gmail.com"
+   
+}
+```
+atualização de customer
+@Put http://localhost:8080/customers/{id}
+body:
+```json
+{
+    "name": "Lucas Clinio Maraia",
+    "email": "l.cliniomaraia@gmail.com"
+   
+}
+```
+exclusão de customer
+@Delete http://localhost:8080/customers/{id}
 
-1. Clone o projeto: `https://github.com/allanalves92/practical-test.git`
-1. Entre na pasta `practical-test` e execute: `mvn spring-boot:run`
-1. Acesse: `http://localhost:8080/customers`
+cadastro de endereço customer
+@Post http://localhost:8080/customers/{id}/addresses
+body:
+```json
+[
+  {
+    "street": "Avenida dos Ourives",
+    "city": "São Paulo",
+    "addressComplement": "bloco 5 ap 81"
+  },
+  {
+   "street": "Rua Joao Semeraro",
+    "city": "São Paulo",
+    "addressComplement": "bloco 1 ap 22"
+  }
+]
+
 
 
 
