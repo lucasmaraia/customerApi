@@ -5,6 +5,9 @@
 Consulta de customer
 #Get http://localhost:8080/customers
 
+A api é paginada, basta adicionar os parametros: paginated= true, size = número maximo de registros, page = numero da pagina
+Porém não é obrigatório, caso o envio seja realizado sem parametros, é consultado todos os registros
+
 response: 
 ```json
 [
